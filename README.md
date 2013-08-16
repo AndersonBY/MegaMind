@@ -71,6 +71,7 @@ One thing to be noticed is that it seems that you can only find this file when
 you're openning the project you are working on in CoIDE.
 
 After openning arm-gcc-link.ld, you should add something so it looks like this:
+
 /* Section Definitions */
 SECTIONS
 {
