@@ -1,4 +1,4 @@
-								MegaMind
+MegaMind
 
 The lastest version can be found here:
 
@@ -221,8 +221,7 @@ Remember to end with .cpp
 
 -------------------------------
 6 Include "Arduino.h"
-In the userMain.cpp add:
-#include "Arduino.h"
+In the userMain.cpp add:"#include "Arduino.h""
 
 
 -------------------------------
