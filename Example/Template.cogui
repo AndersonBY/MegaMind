@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench version="2.0">
+<workbenchAdvisor/>
+<window>
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar/>
+<page focus="true" label="Workspace - CooCox CoBuilder">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
+<part id="5"/>
+<part id="6"/>
+</presentation>
+</folder>
+</info>
+</editorArea>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="userMain.cpp" partName="userMain.cpp" path="D:/CooCox/CoIDE/workspace/Template/userMain.cpp" title="userMain.cpp" tooltip="D:/CooCox/CoIDE/workspace/Template/userMain.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/userMain.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="68" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="variant.h" partName="variant.h" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/variant.h" title="variant.h" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/variant.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/variant.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4752" selectionTopPixel="13"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="Arduino.h" partName="Arduino.h" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/Arduino.h" title="Arduino.h" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/Arduino.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/Arduino.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="836" selectionTopPixel="135"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="variant.cpp" partName="variant.cpp" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/variant.cpp" title="variant.cpp" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/variant.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/variant.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="12658" selectionTopPixel="2578"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" partName="main.cpp" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/main.cpp" title="main.cpp" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/main.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/main.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="883" selectionTopPixel="360"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="UARTClass.cpp" partName="UARTClass.cpp" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/UARTClass.cpp" title="UARTClass.cpp" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/UARTClass.cpp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/UARTClass.cpp"/>
+<editorState selectionHorizontalPixel="0" selectionLength="20" selectionOffset="1185" selectionTopPixel="450"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="UARTClass.h" partName="UARTClass.h" path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/UARTClass.h" title="UARTClass.h" tooltip="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/UARTClass.h" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Template/MegaMindLib/UARTClass.h"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="855"/>
+</editor>
+</editors>
+<views>
+<view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="45">
+<expanded>
+<element path="/Template"/>
+<element path="/Template/CoX"/>
+<element path="/Template/CoX/CoX_Peripheral"/>
+<element path="/Template/CoX/CoX_Peripheral/inc"/>
+<element path="/Template/CoX/CoX_Peripheral/src"/>
+<element path="/Template/MegaMindLib"/>
+<element path="/Template/syscalls"/>
+</expanded>
+<selection>
+<element path="/Template/MegaMindLib/UARTClass.h"/>
+</selection>
+</viewState>
+</view>
+<view id="org.coocox.component.ui.ComponentView" partName="Components">
+<viewState/>
+</view>
+<view id="org.eclipse.search.ui.views.SearchView" partName="Search">
+<viewState isPinned="false">
+<view IMemento.internal.id="org.eclipse.cdt.ui.pdomSearchViewPage" definitionColumnWidth="150" locationColumnWidth="300" matchColumnWidth="300" org.eclipse.search.lastActivation="2" org.eclipse.search.resultpage.layout="2" showEnclosingDefinitions="true"/>
+<view IMemento.internal.id="org.eclipse.search.text.FileSearchResultPage" org.eclipse.search.lastActivation="1" org.eclipse.search.resultpage.layout="2" org.eclipse.search.resultpage.limit="1000" org.eclipse.search.resultpage.sorting="2"/>
+<view IMemento.internal.id="" org.eclipse.search.lastActivation="0"/>
+</viewState>
+</view>
+<view id="org.coocox.builder.ui.exampleView" partName="xADC Examples">
+<viewState>
+<Examples ComponentId="482" Title="xADC"/>
+</viewState>
+</view>
+<view id="org.eclipse.ui.console.ConsoleView" partName="Console">
+<viewState/>
+</view>
+<view id="org.coocox.component.ui.Help" partName="Help">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
+<alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
+<alwaysOnActionSet id="org.coocox.welcome.ui.actionSet"/>
+<alwaysOnActionSet id="org.eclipse.search.searchActionSet"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.annotationNavigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.navigation"/>
+<alwaysOnActionSet id="org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.keyBindings"/>
+<alwaysOnActionSet id="org.eclipse.ui.actionSet.openFiles"/>
+<alwaysOnActionSet id="org.eclipse.debug.ui.breakpointActionSet"/>
+<alwaysOnActionSet id="org.coocox.userspace.actionSet"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showConsoleAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showDebugAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.ShowDisassemblyAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showExpressionsAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.trace.actions.ShowTraceControlAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showMemoryBrowserAction"/>
+<hide_menu_item_id id="org.coocox.builder.ui.openProjectExplorerAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showRegistersAction"/>
+<hide_menu_item_id id="org.coocox.codebugger.configuration.showVariablesAction"/>
+<hide_menu_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<hide_menu_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.refactoring.menu"/>
+<hide_menu_item_id id="org.eclipse.jdt.ui.source.menu"/>
+<hide_toolbar_item_id id="org.eclipse.debug.ui.commands.TerminateAndRelaunch"/>
+<hide_toolbar_item_id id="org.eclipse.cdt.debug.internal.ui.actions.ToggleInstructionStepModeAction"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="org.coocox.component.ui.ComponentView"/>
+<view id="org.coocox.builder.ui.views.ProjectView"/>
+<view id="org.coocox.component.ui.Help"/>
+<view id="org.coocox.builder.ui.exampleView"/>
+<view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.search.ui.views.SearchView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@168763f">
+<folder activePageID="org.coocox.component.ui.ComponentView" appearance="2" expanded="2">
+<page content="org.coocox.component.ui.ComponentView" label="Components"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="stickyFolderRight" ratio="0.7496318" ratioLeft="1018" ratioRight="340" relationship="2" relative="org.eclipse.ui.internal.ViewStack@168763f">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@1df0bb" ratio="0.7" ratioLeft="441" ratioRight="189" relationship="4" relative="org.eclipse.ui.internal.ViewStack@168763f">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="org.eclipse.search.ui.views.SearchView" label="Search"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.18745388" ratioLeft="254" ratioRight="1101" relationship="2" relative="org.eclipse.ui.internal.ViewStack@168763f"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@d26fd4" ratio="0.82213813" ratioLeft="869" ratioRight="188" relationship="2" relative="org.eclipse.ui.editorss">
+<folder activePageID="org.coocox.builder.ui.exampleView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.exampleView" label="xADC Examples"/>
+<page content="org.coocox.component.ui.Help" label="Help"/>
+<page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
+<page content="org.coocox.coassistant.view.CoAssistantView" label="LabelNotFound"/>
+<page content="org.coocox.builder.ui.MoreExampleView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@12b2a00" ratio="0.36984128" ratioLeft="233" ratioRight="397" relationship="4" relative="org.eclipse.ui.internal.ViewStack@168763f">
+<folder activePageID="org.coocox.builder.ui.views.ProjectView" appearance="2" expanded="2">
+<page content="org.coocox.builder.ui.views.ProjectView" label="Project"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory>
+<editors>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/variant.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/Arduino.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/variant.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/CoX/CoX_Peripheral/inc/xgpio.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/UARTClass.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/main.cpp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/CoX/CoX_Peripheral/inc/xsysctl.h"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Template/MegaMindLib/UARTClass.h"/>
+</editors>
+<item historyLabel="variant.h" index="2">
+<position/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1393" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1418" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1418" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1418" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="6266" y="0"/>
+</item>
+<item historyLabel="variant.cpp" index="0">
+<position info="not_deleted" x="12658" y="16"/>
+</item>
+<item historyLabel="main.cpp" index="5">
+<position info="not_deleted" x="883" y="0"/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="6266" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4205" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1392" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4284" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4284" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1391" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position info="not_deleted" x="127421" y="16"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1381" y="0"/>
+</item>
+<item historyLabel="xgpio.h" index="3">
+<position info="not_deleted" x="135953" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1381" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4752" y="0"/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="6266" y="0"/>
+</item>
+<item historyLabel="main.cpp" index="5">
+<position info="not_deleted" x="883" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1200" y="0"/>
+</item>
+<item historyLabel="xsysctl.h" index="6">
+<position info="not_deleted" x="8368" y="20"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1200" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4237" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1185" y="20"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4237" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1185" y="20"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4752" y="0"/>
+</item>
+<item historyLabel="UARTClass.h" index="7">
+<position info="not_deleted" x="1135" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4752" y="0"/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="6266" y="0"/>
+</item>
+<item historyLabel="variant.h" index="2">
+<position info="not_deleted" x="4752" y="0"/>
+</item>
+<item historyLabel="UARTClass.h" index="7">
+<position info="not_deleted" x="839" y="0"/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="836" y="0"/>
+</item>
+<item historyLabel="UARTClass.h" index="7">
+<position info="not_deleted" x="1900" y="0"/>
+</item>
+<item historyLabel="Arduino.h" index="1">
+<position info="not_deleted" x="836" y="0"/>
+</item>
+<item historyLabel="UARTClass.cpp" index="4">
+<position info="not_deleted" x="1185" y="20"/>
+</item>
+<item active="true" historyLabel="UARTClass.h" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+</navigationHistory>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+</window>
+<mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UARTClass.h" tooltip="Template/MegaMindLib/UARTClass.h">
+<persistable path="/Template/MegaMindLib/UARTClass.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xsysctl.h" tooltip="Template/CoX/CoX_Peripheral/inc/xsysctl.h">
+<persistable path="/Template/CoX/CoX_Peripheral/inc/xsysctl.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xgpio.h" tooltip="Template/CoX/CoX_Peripheral/inc/xgpio.h">
+<persistable path="/Template/CoX/CoX_Peripheral/inc/xgpio.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="wiring_constants.h" tooltip="Template/MegaMindLib/wiring_constants.h">
+<persistable path="/Template/MegaMindLib/wiring_constants.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xhw_ints.h" tooltip="Template/CoX/CoX_Peripheral/inc/xhw_ints.h">
+<persistable path="/Template/CoX/CoX_Peripheral/inc/xhw_ints.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="UARTClass.cpp" tooltip="Template/MegaMindLib/UARTClass.cpp">
+<persistable path="/Template/MegaMindLib/UARTClass.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xhw_memmap.h" tooltip="Template/CoX/CoX_Peripheral/inc/xhw_memmap.h">
+<persistable path="/Template/CoX/CoX_Peripheral/inc/xhw_memmap.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="wiring_digital.c" tooltip="Template/MegaMindLib/wiring_digital.c">
+<persistable path="/Template/MegaMindLib/wiring_digital.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="xgpio.c" tooltip="Template/CoX/CoX_Peripheral/src/xgpio.c">
+<persistable path="/Template/CoX/CoX_Peripheral/src/xgpio.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="wiring_pulse.cpp" tooltip="Template/MegaMindLib/wiring_pulse.cpp">
+<persistable path="/Template/MegaMindLib/wiring_pulse.cpp"/>
+</file>
+<file factoryID="org.eclipse.cdt.ui.ExternalEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="ctype.h" tooltip="D:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\arm-none-eabi\include\ctype.h">
+<persistable path="D:\Program Files (x86)\GNU Tools ARM Embedded\4.7 2013q2\arm-none-eabi\include\ctype.h" project="Template"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="main.cpp" tooltip="Template/MegaMindLib/main.cpp">
+<persistable path="/Template/MegaMindLib/main.cpp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="syscalls.c" tooltip="Template/syscalls/syscalls.c">
+<persistable path="/Template/syscalls/syscalls.c"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="wiring_pulse.h" tooltip="Template/MegaMindLib/wiring_pulse.h">
+<persistable path="/Template/MegaMindLib/wiring_pulse.h"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="wiring.c" tooltip="Template/MegaMindLib/wiring.c">
+<persistable path="/Template/MegaMindLib/wiring.c"/>
+</file>
+</mruList>
+</workbench>

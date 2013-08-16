@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="postbuild" name="test">
+	<property name="project.name" value="Template"/>
+	<property name="project.path" value="D:/CooCox/CoIDE/workspace/Template"/>
+	<property name="output.name" value="Template"/>
+	<property name="output.folder" value="D:/CooCox/CoIDE/workspace/Template"/>
+	<property name="output.path" value="${output.folder}/${output.name}"/>
+	<property name="project.debug" value="${output.path}/Debug"/>
+	<property name="project.obj" value="${output.path}/Debug/obj"/>
+	<property name="project.bin" value="${output.path}/Debug/bin"/>
+
+	<!-- associate current path to the link file path-->
+	<dirname file="$${basedir}" property="linkdir"/>
+
+	<target depends="compile" name="postbuild">
+	   <exec executable="${gcc.home}\arm-none-eabi-objcopy.exe">
+	      <arg value="-O"/>
+	      <arg value="binary"/>
+	      <arg value="${project.bin}\${project.name}.elf"/>
+	      <arg value="${project.bin}\${project.name}.bin"/>
+	   </exec>
+	   <exec executable="${gcc.home}\arm-none-eabi-objcopy.exe">
+		  <arg value="-O"/>
+		  <arg value="ihex"/>
+		  <arg value="${project.bin}\${project.name}.elf"/>
+		  <arg value="${project.bin}\${project.name}.hex"/>
+	   </exec>
+	   <exec dir="${project.bin}" executable="${gcc.home}\arm-none-eabi-size.exe">
+		   <arg value="${project.name}.elf"/>
+	   </exec>
+	</target>
+
+	<taskdef resource="cpptasks.tasks"/>
+	<target name="compile">
+		<mkdir dir="${project.bin}"/>
+		<mkdir dir="${project.obj}"/>
+		<cc debug="true" incremental="0" objdir="${project.obj}" outfile="${project.bin}/${project.name}.elf" outtype="executable" subsystem="console">
+			<!-- compile all the c source file in the project -->
+			<fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/src/xcore.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/startup_coide.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/Stream.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/syscalls/syscalls.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/src/xuart.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/RingBuffer.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/wiring.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/Print.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/UARTClass.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/src/xgpio.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/main.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/WString.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/userMain.cpp"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/src/xdebug.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/MegaMindLib/itoa.c"/>
+      <fileset casesensitive="false" file="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/src/xsysctl.c"/>
+      <project outfile="${output.path}/${project.name}.elf" overwrite="true" type="xcode"/>
+			<defineset>
+			<define name="STM32F103RB"/>
+        <define name="STM32F10X_MD"/>
+      </defineset>
+      <includepath path="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral"/>
+      <includepath path="D:/CooCox/CoIDE/workspace/Template/CoX"/>
+      <includepath path="D:/CooCox/CoIDE/workspace/Template/MegaMindLib"/>
+      <includepath path="D:/CooCox/CoIDE/workspace/Template/CoX/CoX_Peripheral/inc"/>
+      <includepath path="D:/CooCox/CoIDE/workspace/Template"/>
+      <includepath path="D:/CooCox/CoIDE/workspace"/>
+      <compilerarg value="-mcpu=cortex-m3"/>
+      <compilerarg value="-mthumb"/>
+      <compilerarg value="-Wall"/>
+      <compilerarg value="-ffunction-sections"/>
+      <compilerarg value="-g"/>
+      <compilerarg value="-Os"/>
+      <compilerarg value="-cpp"/>
+      <linkerarg value="-mcpu=cortex-m3"/>
+      <linkerarg value="-mthumb"/>
+      <linkerarg value="-g"/>
+      <linkerarg value="-nostartfiles"/>
+      <linkerarg value="-Map=Template.map"/>
+      <linkerarg value="-Os"/>
+      <linkerarg value="--gc-sections"/>
+      <linkerarg value="-L${linkdir}"/>
+      <linkerarg value="-T${linkdir}/arm-gcc-link.ld"/>
+      <libset dir="D:/program files (x86)/gnu tools arm embedded/4.7 2013q2/arm-none-eabi/lib/" libs="stdc++_s"/>
+      <libset dir="D:/program files (x86)/gnu tools arm embedded/4.7 2013q2/arm-none-eabi/lib/" libs="supc++_s"/>
+		</cc>
+	</target>
+
+	<target name="clean">
+		<delete dir="${project.bin}"/>
+		<delete dir="${project.obj}"/>
+		<delete dir="${project.debug}"/>
+		<delete dir="${output.path}/${project.name}.elf.xcodeproj"/>
+	</target>
+
+	<target depends="clean" name="rebuild">
+		<antcall target="postbuild"/>
+	</target>
+
+</project>
