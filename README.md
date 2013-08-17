@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
-                MegaMind
+MegaMind
 ------------------------------------------------------------------------------                
 
 The lastest version can be found here:
@@ -72,8 +72,7 @@ Remember to end with .cpp
 
 -------------------------------
 6 Include "Arduino.h"
-In the userMain.cpp add:
-#include "Arduino.h"
+In the userMain.cpp add:"#include "Arduino.h""
 
 
 -------------------------------
@@ -99,8 +98,9 @@ In MegaMind:
 pinMode(PORTA, 8, OUTPUT);
 digitalWrite(PORTA, 8 ,HIGH);
 
-Usually there are 16 pins in one port.
-PORTA,PORTB,PORTC...
+Usually there are 16 pins in one port:0~15.
+
+Port name: PORTA,PORTB,PORTC...
 
 One exception is analogRead(). MegaMind Still use A0,A1... as pin number.
 
