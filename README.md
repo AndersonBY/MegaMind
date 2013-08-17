@@ -57,26 +57,33 @@ xADC
 The Componets above didn't include SPI and I2C which havn't been develop in 
 MegaMind Lib.
 
+
 -------------------------------
-4.Using C++ in CoIDE
+4.Add MegaMind Lib to your project
+
+Copy MegaMind folder to your project. Add it in CoIDE.
+
+
+-------------------------------
+5.Using C++ in CoIDE
 
 Please refer to Use_C++_in_CoIDE.md file.
 
 
 -------------------------------
-5 Rename main.c
+6.Rename main.c
 
 Rename main.c file in your project to other name like userMain.cpp.
 Remember to end with .cpp
 
 
 -------------------------------
-6 Include "Arduino.h"
+7.Include "Arduino.h"
 In the userMain.cpp add:"#include "Arduino.h""
 
 
 -------------------------------
-7 Done!
+8.Done!
 Now you can use Arduino in Arm MCU.
 Add your code in userMain.cpp.
 
