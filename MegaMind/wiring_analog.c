@@ -48,6 +48,7 @@ static inline uint32_t mapResolution(uint32_t value, uint32_t from, uint32_t to)
 
 eAnalogReference analog_reference = AR_DEFAULT;
 
+//TODO:Set different analogReference. Currently analog reference is set to default value.
 void analogReference(eAnalogReference ulMode)
 {
 	analog_reference = ulMode;
@@ -57,6 +58,7 @@ uint32_t analogRead(uint32_t ulPin)
 {
 	unsigned long ulData[1];
 
+#ifdef STM32F1xx		//GPIOPinConfigure function might be different from other ARM
 	//
 	// configure GPIO pin as ADC function
 	//
@@ -64,6 +66,7 @@ uint32_t analogRead(uint32_t ulPin)
 			g_analogPinDescription[ulPin].ulPortBase,
 			g_analogPinDescription[ulPin].ulPin,
 			g_analogPinDescription[ulPin].ulPinConfig);
+#endif
 
 	//
 	// ADC convert once, Software tirgger.
@@ -151,10 +154,13 @@ void analogWrite( uint32_t ulPort, uint32_t ulPin, uint32_t ulValue ) {
 		xSysCtlPeripheralEnable(g_APinDescription[ulPort][ulPin].ulPeripheralPortId);
 		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 		xSysCtlPeripheralEnable(g_APinDescription[ulPort][ulPin].ulPeripheralTimerId);
+
+#ifdef STM32F1xx	//GPIOPinConfigure function might be different from other ARM
 		GPIOPinConfigure(
 				g_APinDescription[ulPort][ulPin].ulPortBase,
 				g_APinDescription[ulPort][ulPin].ulPin,
 				g_APinDescription[ulPort][ulPin].ulTimerPinConfig);
+#endif
 		pwmInit(g_APinDescription[ulPort][ulPin].ulTimerBase,
 				g_APinDescription[ulPort][ulPin].ulTimerChannel);
 	}
