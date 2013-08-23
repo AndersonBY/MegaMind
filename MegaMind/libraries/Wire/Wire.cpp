@@ -1,7 +1,5 @@
 /*
- * TwoWire.h - TWI/I2C library for Arduino Due
- * Copyright (c) 2011 Cristian Maglie <c.maglie@bug.st>.
- * All rights reserved.
+ * Copyright (c) 2013 MegaMind.  All right reserved.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
