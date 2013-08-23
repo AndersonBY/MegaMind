@@ -118,6 +118,19 @@ extern const UARTPinDescription g_uartPinDescription[] = {
  * UART objects
  */
 
+#ifdef _SERIAL
+UARTClass Serial(0);
+// IT handlers
+unsigned long
+uartIntFunction(void *pvCBData, unsigned long ulEvent,
+        unsigned long ulMsgParam,void *pvMsgData)
+{
+//	while(Serial.uartInt()==0);
+	Serial.uartInt();
+	return 0;
+}
+#endif
+
 #ifdef _SERIAL1
 UARTClass Serial1(1);
 // IT handlers
@@ -166,19 +179,6 @@ uart4IntFunction(void *pvCBData, unsigned long ulEvent,
 {
 //	while(Serial4.uartInt()==0);
 	Serial4.uartInt();
-	return 0;
-}
-#endif
-
-#ifdef _SERIAL5
-UARTClass Serial5(5);
-// IT handlers
-unsigned long
-uart5IntFunction(void *pvCBData, unsigned long ulEvent,
-        unsigned long ulMsgParam,void *pvMsgData)
-{
-//	while(Serial5.uartInt()==0);
-	Serial5.uartInt();
 	return 0;
 }
 #endif

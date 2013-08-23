@@ -25,63 +25,60 @@
 
 UARTClass::UARTClass(unsigned char uart_num)
 {
-	_uart_num = uart_num - 1;
-	_uart_base = g_uartPinDescription[_uart_num].uartBase;
+	_uart_num = uart_num;
+//	_uart_base = g_uartPinDescription[_uart_num].uartBase;
 }
 
 // Public Methods //////////////////////////////////////////////////////////////
 
 void UARTClass::begin(unsigned long dwBaudRate)
 {
-#if 0
 	switch(_uart_num){
-#if UART_INTERFACES_COUNT > 0
+#ifdef _SERIAL
 	case 0:
-		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART1);
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART);
 		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 
-		xSPinTypeI2C(PERIPHERAL_UART1_TX, PIN_UART1_TX);
-		xSPinTypeI2C(PERIPHERAL_UART1_TX, PIN_UART1_TX);
+		xSPinTypeUART(PERIPHERAL_UART_TX, PIN_UART_TX);
+		xSPinTypeUART(PERIPHERAL_UART_TX, PIN_UART_TX);
 
-		xSysCtlPeripheralReset(PERIPHERAL_UART_UART1);
-		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART1);
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART);
 
-		_uart_base = UART1_BASE;
+		_uart_base = UART_BASE;
 		xUARTConfigSet(_uart_base, dwBaudRate,
 				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
 		xUARTIntEnable(_uart_base, UART_INT_RXNE);
-		xUARTIntCallbackInit (_uart_base, uart1IntFunction);
+		xUARTIntCallbackInit (_uart_base, uartIntFunction);
 
 		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
-		xIntEnable (INTERRUPT_UART1);
+		xIntEnable (INTERRUPT_UART);
 		break;
 #endif
-#if UART_INTERFACES_COUNT > 1
+#ifdef _SERIAL1
 	case 1:
 		break;
 #endif
-#if UART_INTERFACES_COUNT > 2
+#ifdef _SERIAL2
 	case 2:
 		break;
 #endif
-#if UART_INTERFACES_COUNT > 3
+#ifdef _SERIAL3
 	case 3:
 		break;
 #endif
-#if UART_INTERFACES_COUNT > 4
+#ifdef _SERIAL4
 	case 4:
 		break;
 #endif
-#if UART_INTERFACES_COUNT > 5
-	case 5:
-		break;
-#endif
 	}
-#endif
+#if 0
 	xSysCtlPeripheralEnable(g_uartPinDescription[_uart_num].ulPeripheralPortId);
 	xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 
+	//TODO:GPIOPinConfigure function might be different from other ARM
+	//TODO:Write GPIOPinConfigure fuction for different ARM
 	//GPIO Pin Config TX
 	GPIOPinConfigure(
 			g_uartPinDescription[_uart_num].ulPortBase,
@@ -103,25 +100,36 @@ void UARTClass::begin(unsigned long dwBaudRate)
 
 	xUARTIntEnable(_uart_base, UART_INT_RXNE);
 
-	switch(_uart_num + 1){
-	case 1:
+	switch(_uart_num){
+#ifdef _SERIAL
+	case 0:
 		xUARTIntCallbackInit (_uart_base, uart1IntFunction);
 		break;
-	case 2:
+#endif
+#ifdef _SERIAL1
+	case 1:
 		xUARTIntCallbackInit (_uart_base, uart2IntFunction);
 		break;
-	case 3:
+#endif
+#ifdef _SERIAL2
+	case 2:
 		xUARTIntCallbackInit (_uart_base, uart3IntFunction);
 		break;
-//	case 4:
-//		xUARTIntCallbackInit (_uart_base, uart4IntFunction);
-//		break;
-//	case 5:
-//		xUARTIntCallbackInit (_uart_base, uart5IntFunction);
-//		break;
+#endif
+#ifdef _SERIAL3
+	case 3:
+		xUARTIntCallbackInit (_uart_base, uart4IntFunction);
+		break;
+#endif
+#ifdef _SERIAL4
+	case 4:
+		xUARTIntCallbackInit (_uart_base, uart5IntFunction);
+		break;
+#endif
 	}
 	xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
 	xIntEnable (g_uartPinDescription[_uart_num].ulInterruptId);
+#endif
 }
 
 void UARTClass::end( void )
@@ -194,12 +202,13 @@ size_t UARTClass::write(unsigned char uc_data )
 
 unsigned char UARTClass::uartInt(void)
 {
-	// Did we receive data ?
+
 	//ATTENTION:进入中断函数后无法使用xUARTCharGet或者xUARTCharGetNonBlocking
 	//因为进入中断函数后USART_SR_RXNE标志位（receive data not empty）仍为0,
 	//但此时USART_DR标志位(Data Register)已经有数据进来了
 	//所以在串口中断函数中只能直接使用xHWREG( _uart_base + USART_DR)来获取数据
 
+	//TODO:Should not directly write register here. Use other function.
 	long c = xHWREG(_uart_base + USART_DR);
 
 	if (c!=-1){

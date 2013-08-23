@@ -19,12 +19,10 @@
 #ifndef _UART_CLASS_
 #define _UART_CLASS_
 
-//#include "Arduino.h"
-
 #include "HardwareSerial.h"
 #include "RingBuffer.h"
 
-//#include "variant.h"
+#include "variantUART.h"
 
 #include "xhw_types.h"
 #include "xhw_ints.h"
@@ -57,6 +55,10 @@ extern const UARTPinDescription g_uartPinDescription[];
 #endif
 
 extern unsigned long
+uartIntFunction(void *pvCBData, unsigned long ulEvent,
+        unsigned long ulMsgParam,void *pvMsgData);
+
+extern unsigned long
 uart1IntFunction(void *pvCBData, unsigned long ulEvent,
         unsigned long ulMsgParam,void *pvMsgData);
 
@@ -70,10 +72,6 @@ uart3IntFunction(void *pvCBData, unsigned long ulEvent,
 
 extern unsigned long
 uart4IntFunction(void *pvCBData, unsigned long ulEvent,
-        unsigned long ulMsgParam,void *pvMsgData);
-
-extern unsigned long
-uart5IntFunction(void *pvCBData, unsigned long ulEvent,
         unsigned long ulMsgParam,void *pvMsgData);
 
 class UARTClass : public HardwareSerial

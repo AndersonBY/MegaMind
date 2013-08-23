@@ -253,6 +253,7 @@ extern const APDescription g_analogPinDescription[];
 
  //Include board variant
 #include "variant.h"
+#include "variantUART.h"
 
 //// USB Device
 //#define USB_VID            0x2341 // arduino LLC vid

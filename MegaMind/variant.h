@@ -16,8 +16,8 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef _VARIANT_ARDUINO_DUE_X_
-#define _VARIANT_ARDUINO_DUE_X_
+#ifndef _VARIANT_
+#define _VARIANT_
 
 /*----------------------------------------------------------------------------
  *        Headers
@@ -26,7 +26,6 @@
 #include "Arduino.h"
 #ifdef __cplusplus
 #include "UARTClass.h"
-//#include "USARTClass.h"
 #endif
 
 #ifdef __cplusplus
@@ -58,17 +57,21 @@ extern "C"{
 //sum of ports:
 //STM32F10xC&R:PORTA~PORTC
 #define PORT_COUNT 3
-//
+
+//currently not usable
+#if 0
 // Number of pins defined in PinDescription array
 #define PINS_COUNT           (79u)
-//
+
 // LEDs
-//#define PIN_LED_13           (13u)
-//#define PIN_LED_RXL          (72u)
-//#define PIN_LED_TXL          (73u)
-//#define PIN_LED              PIN_LED_13
-//#define PIN_LED2             PIN_LED_RXL
-//#define PIN_LED3             PIN_LED_TXL
+#define PIN_LED_13           (13u)
+#define PIN_LED_RXL          (72u)
+#define PIN_LED_TXL          (73u)
+#define PIN_LED              PIN_LED_13
+#define PIN_LED2             PIN_LED_RXL
+#define PIN_LED3             PIN_LED_TXL
+
+#endif
 
 /*
  * SPI Interfaces
@@ -133,61 +136,6 @@ extern "C"{
 //#define WIRE1_INTERFACE_ID   ID_TWI0
 //#define WIRE1_ISR_HANDLER    TWI0_Handler
 
-/*
- * UART/USART Interfaces
- */
-#define UART_INTERFACES_COUNT 		3
-// Serial1
-#define _SERIAL1
-//#define PIN_UART1_CK		        PA8
-//#define PIN_UART1_TX		        PA9
-//#define PIN_UART1_RX		        PA10
-//#define PIN_UART1_CTS		        PA11
-//#define PIN_UART1_RTS		        PA12
-//#define PERIPHERAL_UART1_CK		    UART1CK
-//#define PERIPHERAL_UART1_TX		    UART1TX
-//#define PERIPHERAL_UART1_RX		    UART1RX
-//#define PERIPHERAL_UART1_CTS		UART1CTS
-//#define PERIPHERAL_UART1_RTS		UART1RTS
-//#define PERIPHERAL_PORT_UART1		xSYSCTL_PERIPH_GPIOA
-//#define PERIPHERAL_UART_UART1		xSYSCTL_PERIPH_UART1
-//#define INTERRUPT_UART1				xINT_UART1
-//#define PORT_BASE_UART1				xGPIO_PORTA_BASE
-//#define UART1_BASE					USART1_BASE
-// Serial2
-#define _SERIAL2
-//#define PIN_UART2_CK		        PA4
-//#define PIN_UART2_TX		        PA2
-//#define PIN_UART2_RX		        PA3
-//#define PIN_UART2_CTS		        PA0
-//#define PIN_UART2_RTS		        PA1
-//#define PERIPHERAL_UART2_CK		    UART2CK
-//#define PERIPHERAL_UART2_TX		    UART2TX
-//#define PERIPHERAL_UART2_RX		    UART2RX
-//#define PERIPHERAL_UART2_CTS		UART2CTS
-//#define PERIPHERAL_UART2_RTS		UART2RTS
-//#define PERIPHERAL_PORT_UART2		xSYSCTL_PERIPH_GPIOA
-//#define PERIPHERAL_UART_UART2		xSYSCTL_PERIPH_UART2
-//#define INTERRUPT_UART2				xINT_UART2
-//#define PORT_BASE_UART2				xGPIO_PORTA_BASE
-//#define UART2_BASE					USART2_BASE
-// Serial3
-#define _SERIAL3
-//#define PIN_UART3_CK		        PB12
-//#define PIN_UART3_TX		        PB10
-//#define PIN_UART3_RX		        PB11
-//#define PIN_UART3_CTS		        PB13
-//#define PIN_UART3_RTS		        PB14
-//#define PERIPHERAL_UART3_CK		    UART3CK
-//#define PERIPHERAL_UART3_TX		    UART3TX
-//#define PERIPHERAL_UART3_RX		    UART3RX
-//#define PERIPHERAL_UART3_CTS		UART3CTS
-//#define PERIPHERAL_UART3_RTS		UART3RTS
-//#define PERIPHERAL_PORT_UART3		xSYSCTL_PERIPH_GPIOB
-//#define PERIPHERAL_UART_UART3		xSYSCTL_PERIPH_UART3
-//#define INTERRUPT_UART3				xINT_UART3
-//#define PORT_BASE_UART3				xGPIO_PORTB_BASE
-//#define UART3_BASE					USART3_BASE
 ///*
 // * USB Interfaces
 // */
@@ -255,11 +203,11 @@ static const uint8_t A15 = 15;         // |    PC5 (ADC12)         |
 
 #ifdef __cplusplus
 
+extern UARTClass Serial;
 extern UARTClass Serial1;
 extern UARTClass Serial2;
-extern UARTClass Serial3;
 
 #endif
 
-#endif /* _VARIANT_ARDUINO_DUE_X_ */
+#endif /* _VARIANT_ */
 
