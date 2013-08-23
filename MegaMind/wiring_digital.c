@@ -28,22 +28,21 @@ extern int pinMode( uint32_t ulPort, uint32_t ulPin, uint32_t ulMode )
 	switch(ulMode)
 	{
 		case INPUT:
-//			mode = xGPIO_DIR_MODE_IN;
-			mode = GPIO_TYPE_IN_FLOATING | GPIO_IN_SPEED_FIXED;
+			mode = xGPIO_DIR_MODE_IN;
 		break;
 
 		case INPUT_PULLUP:
-			mode = GPIO_TYPE_IN_WPU_WPD | GPIO_IN_SPEED_FIXED;
+			mode = xGPIO_DIR_MODE_IN;
 			digitalWrite(ulPort, ulPin, HIGH);
 		break;
 
 		case INPUT_PULLDOWN:
-			mode = GPIO_TYPE_IN_WPU_WPD | GPIO_IN_SPEED_FIXED;
+			mode = xGPIO_DIR_MODE_IN;
 			digitalWrite(ulPort, ulPin, LOW);
 		break;
 
 		case OUTPUT:
-			mode = GPIO_TYPE_OUT_STD | GPIO_OUT_SPEED_50M;
+			mode = xGPIO_DIR_MODE_OUT;
 		break;
 
 		//wrong mode
@@ -53,10 +52,10 @@ extern int pinMode( uint32_t ulPort, uint32_t ulPin, uint32_t ulMode )
 	}
 
 	xSysCtlPeripheralEnable(g_APinDescription[ulPort][ulPin].ulPeripheralPortId);
-	GPIODirModeSet(
+	xGPIODirModeSet(
 			g_APinDescription[ulPort][ulPin].ulPortBase,
-			ulPin,
-			mode & 0xC, mode & 0x3);
+			g_APinDescription[ulPort][ulPin].ulPin,
+			mode);
 
 	return 1;
 }
