@@ -84,14 +84,6 @@ extern void loop( void ) ;
 //#define portInputRegister(port)    ( &(port->PIO_PDSR) )
 ////#define portModeRegister(P)        (  )
 
-#define PortA GPIOA_BASE
-#define PortB GPIOB_BASE
-#define PortC GPIOC_BASE
-#define PortD GPIOD_BASE
-#define PortE GPIOE_BASE
-#define PortF GPIOF_BASE
-#define PortG GPIOG_BASE
-
 #define PORTA 0
 #define PORTB 1
 #define PORTC 2

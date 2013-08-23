@@ -26,7 +26,6 @@
 UARTClass::UARTClass(unsigned char uart_num)
 {
 	_uart_num = uart_num;
-//	_uart_base = g_uartPinDescription[_uart_num].uartBase;
 }
 
 // Public Methods //////////////////////////////////////////////////////////////
@@ -40,7 +39,7 @@ void UARTClass::begin(unsigned long dwBaudRate)
 		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 
 		xSPinTypeUART(PERIPHERAL_UART_TX, PIN_UART_TX);
-		xSPinTypeUART(PERIPHERAL_UART_TX, PIN_UART_TX);
+		xSPinTypeUART(PERIPHERAL_UART_RX, PIN_UART_RX);
 
 		xSysCtlPeripheralReset(PERIPHERAL_UART_UART);
 		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART);
@@ -58,78 +57,93 @@ void UARTClass::begin(unsigned long dwBaudRate)
 #endif
 #ifdef _SERIAL1
 	case 1:
-		break;
-#endif
-#ifdef _SERIAL2
-	case 2:
-		break;
-#endif
-#ifdef _SERIAL3
-	case 3:
-		break;
-#endif
-#ifdef _SERIAL4
-	case 4:
-		break;
-#endif
-	}
-#if 0
-	xSysCtlPeripheralEnable(g_uartPinDescription[_uart_num].ulPeripheralPortId);
-	xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART1);
+		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 
-	//TODO:GPIOPinConfigure function might be different from other ARM
-	//TODO:Write GPIOPinConfigure fuction for different ARM
-	//GPIO Pin Config TX
-	GPIOPinConfigure(
-			g_uartPinDescription[_uart_num].ulPortBase,
-			g_uartPinDescription[_uart_num].ulPinTX,
-			g_uartPinDescription[_uart_num].ulPinConfigTX);
+		xSPinTypeUART(PERIPHERAL_UART1_TX, PIN_UART1_TX);
+		xSPinTypeUART(PERIPHERAL_UART1_RX, PIN_UART1_RX);
 
-	//GPIO Pin Config RX
-	GPIOPinConfigure(
-			g_uartPinDescription[_uart_num].ulPortBase,
-			g_uartPinDescription[_uart_num].ulPinRX,
-			g_uartPinDescription[_uart_num].ulPinConfigRX);
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART1);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART1);
 
-	xSysCtlPeripheralReset(g_uartPinDescription[_uart_num].ulPeripheralUartId);
-	xSysCtlPeripheralEnable(g_uartPinDescription[_uart_num].ulPeripheralUartId);
+		_uart_base = UART1_BASE;
+		xUARTConfigSet(_uart_base, dwBaudRate,
+				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
 
-	xUARTConfigSet(_uart_base, dwBaudRate, (UART_CONFIG_WLEN_8 |
-	                                     UART_CONFIG_STOP_ONE |
-	                                     UART_CONFIG_PAR_NONE));
-
-	xUARTIntEnable(_uart_base, UART_INT_RXNE);
-
-	switch(_uart_num){
-#ifdef _SERIAL
-	case 0:
+		xUARTIntEnable(_uart_base, UART_INT_RXNE);
 		xUARTIntCallbackInit (_uart_base, uart1IntFunction);
-		break;
-#endif
-#ifdef _SERIAL1
-	case 1:
-		xUARTIntCallbackInit (_uart_base, uart2IntFunction);
+
+		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
+		xIntEnable (INTERRUPT_UART1);
 		break;
 #endif
 #ifdef _SERIAL2
 	case 2:
-		xUARTIntCallbackInit (_uart_base, uart3IntFunction);
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART2);
+		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
+
+		xSPinTypeUART(PERIPHERAL_UART2_TX, PIN_UART2_TX);
+		xSPinTypeUART(PERIPHERAL_UART2_RX, PIN_UART2_RX);
+
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART2);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART2);
+
+		_uart_base = UART2_BASE;
+		xUARTConfigSet(_uart_base, dwBaudRate,
+				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+
+		xUARTIntEnable(_uart_base, UART_INT_RXNE);
+		xUARTIntCallbackInit (_uart_base, uart2IntFunction);
+
+		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
+		xIntEnable (INTERRUPT_UART2);
 		break;
 #endif
 #ifdef _SERIAL3
 	case 3:
-		xUARTIntCallbackInit (_uart_base, uart4IntFunction);
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART3);
+		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
+
+		xSPinTypeUART(PERIPHERAL_UART3_TX, PIN_UART3_TX);
+		xSPinTypeUART(PERIPHERAL_UART3_RX, PIN_UART3_RX);
+
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART3);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART3);
+
+		_uart_base = UART3_BASE;
+		xUARTConfigSet(_uart_base, dwBaudRate,
+				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+
+		xUARTIntEnable(_uart_base, UART_INT_RXNE);
+		xUARTIntCallbackInit (_uart_base, uart3IntFunction);
+
+		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
+		xIntEnable (INTERRUPT_UART3);
 		break;
 #endif
 #ifdef _SERIAL4
 	case 4:
-		xUARTIntCallbackInit (_uart_base, uart5IntFunction);
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART4);
+		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
+
+		xSPinTypeUART(PERIPHERAL_UART4_TX, PIN_UART4_TX);
+		xSPinTypeUART(PERIPHERAL_UART4_RX, PIN_UART4_RX);
+
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART4);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART4);
+
+		_uart_base = UART4_BASE;
+		xUARTConfigSet(_uart_base, dwBaudRate,
+				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+
+		xUARTIntEnable(_uart_base, UART_INT_RXNE);
+		xUARTIntCallbackInit (_uart_base, uart4IntFunction);
+
+		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
+		xIntEnable (INTERRUPT_UART4);
 		break;
 #endif
 	}
-	xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
-	xIntEnable (g_uartPinDescription[_uart_num].ulInterruptId);
-#endif
 }
 
 void UARTClass::end( void )
@@ -181,10 +195,6 @@ void UARTClass::clear(void)
 
 size_t UARTClass::write(unsigned char uc_data )
 {
-//  // Check if the transmitter is ready
-//  while ((_pUart->UART_SR & UART_SR_TXRDY) != UART_SR_TXRDY)
-//    ;
-
   // Send character and return status
 	xUARTCharPut(_uart_base, uc_data);
 	return 1;

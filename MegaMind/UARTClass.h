@@ -35,25 +35,6 @@
 #include "xgpio.h"
 #include "xuart.h"
 
-#ifdef __cplusplus
-extern "C" {
-/*UART Pin Description*/
-typedef struct _UARTPinDescription{
-	uint32_t	uartBase;			//USART1_BASE
-	uint32_t	ulPeripheralPortId; //xSYSCTL_PERIPH_GPIOA
-	uint32_t	ulPeripheralUartId; //xSYSCTL_PERIPH_UART1
-	uint32_t	ulInterruptId;      //xINT_UART1
-	uint32_t	ulPortBase;         //GPIOA_BASE
-	uint32_t	ulPinTX;            //GPIO_PIN_9
-	uint32_t	ulPinConfigTX;		//GPIO_PA9_UART1TX
-	uint32_t	ulPinRX;            //
-	uint32_t	ulPinConfigRX;		//
-}UARTPinDescription;
-/*UART Pin Config Description to be instantiated into variant.cpp*/
-extern const UARTPinDescription g_uartPinDescription[];
-}
-#endif
-
 extern unsigned long
 uartIntFunction(void *pvCBData, unsigned long ulEvent,
         unsigned long ulMsgParam,void *pvMsgData);
