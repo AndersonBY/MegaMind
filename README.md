@@ -118,7 +118,8 @@ I have tested MegaMind lib on STM32F103RBT6. To Use MegaMind on different Arm
 MCU, THEORETICALLY you only need to modify 
 * variant.h
 * variant.cpp 
-* variantUART.h
+* variantUART.h  
+
 which define details of pins in different Arm MCU. Please tell me if you can across
 any problems.
 
