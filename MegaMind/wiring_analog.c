@@ -61,9 +61,9 @@ uint32_t analogRead(uint32_t ulPin)
 	// configure GPIO pin as ADC function
 	//
 	GPIOPinConfigure(
-			analogPinDescription[ulPin].ulPortBase,
-			analogPinDescription[ulPin].ulPin,
-			analogPinDescription[ulPin].ulPinConfig);
+			g_analogPinDescription[ulPin].ulPortBase,
+			g_analogPinDescription[ulPin].ulPin,
+			g_analogPinDescription[ulPin].ulPinConfig);
 
 	//
 	// ADC convert once, Software tirgger.

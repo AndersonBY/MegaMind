@@ -83,7 +83,7 @@ extern const PinDescription g_APinDescription[][16]=
 	}
 } ;
 
-extern const APDescription analogPinDescription[] = {
+extern const APDescription g_analogPinDescription[] = {
 	{GPIOA_BASE, xGPIO_PIN_0, GPIO_PA0_ADC0}, //A0
 	{GPIOA_BASE, xGPIO_PIN_1, GPIO_PA1_ADC1}, //A1
 	{GPIOA_BASE, xGPIO_PIN_2, GPIO_PA2_ADC2}, //A2
@@ -102,7 +102,7 @@ extern const APDescription analogPinDescription[] = {
 	{GPIOC_BASE, xGPIO_PIN_5, GPIO_PC5_ADC15}  //A15
 };
 
-extern const UARTPinDescription uartPinDescription[] = {
+extern const UARTPinDescription g_uartPinDescription[] = {
 	{USART1_BASE, xSYSCTL_PERIPH_GPIOA, xSYSCTL_PERIPH_UART1, xINT_UART1, GPIOA_BASE, GPIO_PIN_9,  GPIO_PA9_UART1TX,  GPIO_PIN_10, GPIO_PA10_UART1RX},
 	{USART2_BASE, xSYSCTL_PERIPH_GPIOA, xSYSCTL_PERIPH_UART2, xINT_UART2, GPIOA_BASE, GPIO_PIN_2,  GPIO_PA2_UART2TX,  GPIO_PIN_3,  GPIO_PA3_UART2RX },
 	{USART3_BASE, xSYSCTL_PERIPH_GPIOB, xSYSCTL_PERIPH_UART3, xINT_UART3, GPIOB_BASE, GPIO_PIN_10, GPIO_PB10_UART3TX, GPIO_PIN_11, GPIO_PB11_UART3RX}

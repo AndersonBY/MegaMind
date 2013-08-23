@@ -26,30 +26,76 @@
 UARTClass::UARTClass(unsigned char uart_num)
 {
 	_uart_num = uart_num - 1;
-	_uart_base = uartPinDescription[_uart_num].uartBase;
+	_uart_base = g_uartPinDescription[_uart_num].uartBase;
 }
 
 // Public Methods //////////////////////////////////////////////////////////////
 
 void UARTClass::begin(unsigned long dwBaudRate)
 {
-	xSysCtlPeripheralEnable(uartPinDescription[_uart_num].ulPeripheralPortId);
+#if 0
+	switch(_uart_num){
+#if UART_INTERFACES_COUNT > 0
+	case 0:
+		xSysCtlPeripheralEnable(PERIPHERAL_PORT_UART1);
+		xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
+
+		xSPinTypeI2C(PERIPHERAL_UART1_TX, PIN_UART1_TX);
+		xSPinTypeI2C(PERIPHERAL_UART1_TX, PIN_UART1_TX);
+
+		xSysCtlPeripheralReset(PERIPHERAL_UART_UART1);
+		xSysCtlPeripheralEnable(PERIPHERAL_UART_UART1);
+
+		_uart_base = UART1_BASE;
+		xUARTConfigSet(_uart_base, dwBaudRate,
+				(UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE));
+
+		xUARTIntEnable(_uart_base, UART_INT_RXNE);
+		xUARTIntCallbackInit (_uart_base, uart1IntFunction);
+
+		xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
+		xIntEnable (INTERRUPT_UART1);
+		break;
+#endif
+#if UART_INTERFACES_COUNT > 1
+	case 1:
+		break;
+#endif
+#if UART_INTERFACES_COUNT > 2
+	case 2:
+		break;
+#endif
+#if UART_INTERFACES_COUNT > 3
+	case 3:
+		break;
+#endif
+#if UART_INTERFACES_COUNT > 4
+	case 4:
+		break;
+#endif
+#if UART_INTERFACES_COUNT > 5
+	case 5:
+		break;
+#endif
+	}
+#endif
+	xSysCtlPeripheralEnable(g_uartPinDescription[_uart_num].ulPeripheralPortId);
 	xSysCtlPeripheralEnable(SYSCTL_PERIPH_AFIO);
 
 	//GPIO Pin Config TX
 	GPIOPinConfigure(
-			uartPinDescription[_uart_num].ulPortBase,
-			uartPinDescription[_uart_num].ulPinTX,
-			uartPinDescription[_uart_num].ulPinConfigTX);
+			g_uartPinDescription[_uart_num].ulPortBase,
+			g_uartPinDescription[_uart_num].ulPinTX,
+			g_uartPinDescription[_uart_num].ulPinConfigTX);
 
 	//GPIO Pin Config RX
 	GPIOPinConfigure(
-			uartPinDescription[_uart_num].ulPortBase,
-			uartPinDescription[_uart_num].ulPinRX,
-			uartPinDescription[_uart_num].ulPinConfigRX);
+			g_uartPinDescription[_uart_num].ulPortBase,
+			g_uartPinDescription[_uart_num].ulPinRX,
+			g_uartPinDescription[_uart_num].ulPinConfigRX);
 
-	xSysCtlPeripheralReset(uartPinDescription[_uart_num].ulPeripheralUartId);
-	xSysCtlPeripheralEnable(uartPinDescription[_uart_num].ulPeripheralUartId);
+	xSysCtlPeripheralReset(g_uartPinDescription[_uart_num].ulPeripheralUartId);
+	xSysCtlPeripheralEnable(g_uartPinDescription[_uart_num].ulPeripheralUartId);
 
 	xUARTConfigSet(_uart_base, dwBaudRate, (UART_CONFIG_WLEN_8 |
 	                                     UART_CONFIG_STOP_ONE |
@@ -75,7 +121,7 @@ void UARTClass::begin(unsigned long dwBaudRate)
 //		break;
 	}
 	xUARTEnable(_uart_base, (UART_BLOCK_UART | UART_BLOCK_TX | UART_BLOCK_RX));
-	xIntEnable (uartPinDescription[_uart_num].ulInterruptId);
+	xIntEnable (g_uartPinDescription[_uart_num].ulInterruptId);
 }
 
 void UARTClass::end( void )

@@ -39,6 +39,8 @@ extern "C"{
 
 /*----------------------------------------------------------------------------*/
 
+#define STM32F1xx
+
 #define STM32RBT6
 
 /** Name of the board */
@@ -105,48 +107,87 @@ extern "C"{
 //static const uint8_t MOSI = PIN_SPI_MOSI;
 //static const uint8_t MISO = PIN_SPI_MISO;
 //static const uint8_t SCK  = PIN_SPI_SCK;
-//
-///*
-// * Wire Interfaces
-// */
-//#define WIRE_INTERFACES_COUNT 2
-//
-//#define PIN_WIRE_SDA         (20u)
-//#define PIN_WIRE_SCL         (21u)
+
+/*
+ * Wire Interfaces
+ */
+#define WIRE_INTERFACES_COUNT 	2
+
+#define WIRE_BASE				I2C1_BASE
+#define WIRE_PORT_BASE			xGPIO_PORTB_BASE
+#define PIN_WIRE_SCL         	PB6
+#define PIN_WIRE_SDA         	PB7
+#define PERIPHERAL_WIRE_SCL		I2C1SCK
+#define PERIPHERAL_WIRE_SDA		I2C1SDA
 //#define WIRE_INTERFACE       TWI1
 //#define WIRE_INTERFACE_ID    ID_TWI1
 //#define WIRE_ISR_HANDLER     TWI1_Handler
-//
-//#define PIN_WIRE1_SDA        (70u)
-//#define PIN_WIRE1_SCL        (71u)
+
+#define WIRE1_BASE				I2C2_BASE
+#define WIRE1_PORT_BASE			xGPIO_PORTB_BASE
+#define PIN_WIRE1_SCL         	PB10
+#define PIN_WIRE1_SDA         	PB11
+#define PERIPHERAL_WIRE1_SCL	I2C2SCK
+#define PERIPHERAL_WIRE1_SDA	I2C2SDA
 //#define WIRE1_INTERFACE      TWI0
 //#define WIRE1_INTERFACE_ID   ID_TWI0
 //#define WIRE1_ISR_HANDLER    TWI0_Handler
-//
+
 /*
  * UART/USART Interfaces
  */
+#define UART_INTERFACES_COUNT 		3
 // Serial1
 #define _SERIAL1
-#define PIN_UART1_CK		        PA8
-#define PIN_UART1_TX		        PA9
-#define PIN_UART1_RX		        PA10
-#define PIN_UART1_CTS		        PA11
-#define PIN_UART1_RTS		        PA12
+//#define PIN_UART1_CK		        PA8
+//#define PIN_UART1_TX		        PA9
+//#define PIN_UART1_RX		        PA10
+//#define PIN_UART1_CTS		        PA11
+//#define PIN_UART1_RTS		        PA12
+//#define PERIPHERAL_UART1_CK		    UART1CK
+//#define PERIPHERAL_UART1_TX		    UART1TX
+//#define PERIPHERAL_UART1_RX		    UART1RX
+//#define PERIPHERAL_UART1_CTS		UART1CTS
+//#define PERIPHERAL_UART1_RTS		UART1RTS
+//#define PERIPHERAL_PORT_UART1		xSYSCTL_PERIPH_GPIOA
+//#define PERIPHERAL_UART_UART1		xSYSCTL_PERIPH_UART1
+//#define INTERRUPT_UART1				xINT_UART1
+//#define PORT_BASE_UART1				xGPIO_PORTA_BASE
+//#define UART1_BASE					USART1_BASE
 // Serial2
 #define _SERIAL2
-#define PIN_UART2_CK		        PA4
-#define PIN_UART2_TX		        PA2
-#define PIN_UART2_RX		        PA3
-#define PIN_UART2_CTS		        PA0
-#define PIN_UART2_RTS		        PA1
+//#define PIN_UART2_CK		        PA4
+//#define PIN_UART2_TX		        PA2
+//#define PIN_UART2_RX		        PA3
+//#define PIN_UART2_CTS		        PA0
+//#define PIN_UART2_RTS		        PA1
+//#define PERIPHERAL_UART2_CK		    UART2CK
+//#define PERIPHERAL_UART2_TX		    UART2TX
+//#define PERIPHERAL_UART2_RX		    UART2RX
+//#define PERIPHERAL_UART2_CTS		UART2CTS
+//#define PERIPHERAL_UART2_RTS		UART2RTS
+//#define PERIPHERAL_PORT_UART2		xSYSCTL_PERIPH_GPIOA
+//#define PERIPHERAL_UART_UART2		xSYSCTL_PERIPH_UART2
+//#define INTERRUPT_UART2				xINT_UART2
+//#define PORT_BASE_UART2				xGPIO_PORTA_BASE
+//#define UART2_BASE					USART2_BASE
 // Serial3
 #define _SERIAL3
-#define PIN_UART3_CK		        PB12
-#define PIN_UART3_TX		        PB10
-#define PIN_UART3_RX		        PB11
-#define PIN_UART3_CTS		        PB13
-#define PIN_UART3_RTS		        PB14
+//#define PIN_UART3_CK		        PB12
+//#define PIN_UART3_TX		        PB10
+//#define PIN_UART3_RX		        PB11
+//#define PIN_UART3_CTS		        PB13
+//#define PIN_UART3_RTS		        PB14
+//#define PERIPHERAL_UART3_CK		    UART3CK
+//#define PERIPHERAL_UART3_TX		    UART3TX
+//#define PERIPHERAL_UART3_RX		    UART3RX
+//#define PERIPHERAL_UART3_CTS		UART3CTS
+//#define PERIPHERAL_UART3_RTS		UART3RTS
+//#define PERIPHERAL_PORT_UART3		xSYSCTL_PERIPH_GPIOB
+//#define PERIPHERAL_UART_UART3		xSYSCTL_PERIPH_UART3
+//#define INTERRUPT_UART3				xINT_UART3
+//#define PORT_BASE_UART3				xGPIO_PORTB_BASE
+//#define UART3_BASE					USART3_BASE
 ///*
 // * USB Interfaces
 // */

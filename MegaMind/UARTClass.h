@@ -24,6 +24,8 @@
 #include "HardwareSerial.h"
 #include "RingBuffer.h"
 
+//#include "variant.h"
+
 #include "xhw_types.h"
 #include "xhw_ints.h"
 #include "xhw_nvic.h"
@@ -50,7 +52,7 @@ typedef struct _UARTPinDescription{
 	uint32_t	ulPinConfigRX;		//
 }UARTPinDescription;
 /*UART Pin Config Description to be instantiated into variant.cpp*/
-extern const UARTPinDescription uartPinDescription[];
+extern const UARTPinDescription g_uartPinDescription[];
 }
 #endif
 

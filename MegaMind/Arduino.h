@@ -35,6 +35,10 @@
 #include "xhw_ints.h"
 #include "xhw_nvic.h"
 #include "xhw_memmap.h"
+#include "xhw_i2c.h"
+#include "xhw_gpio.h"
+#include "xhw_dma.h"
+
 #include "xdebug.h"
 #include "xcore.h"
 #include "xsysctl.h"
@@ -42,15 +46,14 @@
 #include "xuart.h"
 #include "xadc.h"
 #include "xpwm.h"
+#include "xi2c.h"
+#include "xdma.h"
 
 typedef unsigned char uint8_t;
 
 #ifdef __cplusplus
 extern "C"{
 #endif // __cplusplus
-
-//// Includes Atmel CMSIS
-//#include <chip.h>
 
 #include "wiring_constants.h"
 //
@@ -233,7 +236,7 @@ typedef struct _AnalogPinDescription{
 	uint32_t	ulPinConfig;
 }APDescription;
 /*Analog Pin to GPIO Port and Pin*/
-extern const APDescription analogPinDescription[];
+extern const APDescription g_analogPinDescription[];
 
 #ifdef __cplusplus
 } // extern "C"
