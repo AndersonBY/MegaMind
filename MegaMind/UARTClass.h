@@ -76,15 +76,18 @@ class UARTClass : public HardwareSerial
 //    size_t write( const uint8_t *buffer, size_t size);
 
     unsigned char uartInt(void);
-//
-//#if defined __GNUC__ /* GCC CS3 */
-//    using Print::write ; // pull in write(str) and write(buf, size) from Print
-//#elif defined __ICCARM__ /* IAR Ewarm 5.41+ */
-////    virtual void write( const char *str ) ;
-////    virtual void write( const uint8_t *buffer, size_t size ) ;
-//#endif
-//
-//    operator bool() { return true; }; // UART always active
+
+    //Currently not usable
+#if 0
+#if defined __GNUC__ /* GCC CS3 */
+    using Print::write ; // pull in write(str) and write(buf, size) from Print
+#elif defined __ICCARM__ /* IAR Ewarm 5.41+ */
+//    virtual void write( const char *str ) ;
+//    virtual void write( const uint8_t *buffer, size_t size ) ;
+#endif
+
+    operator bool() { return true; }; // UART always active
+#endif
 };
 
 #endif // _UART_CLASS_

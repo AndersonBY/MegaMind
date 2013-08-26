@@ -38,6 +38,7 @@
 #include "xhw_i2c.h"
 #include "xhw_gpio.h"
 #include "xhw_dma.h"
+#include "xhw_timer.h"
 
 #include "xdebug.h"
 #include "xcore.h"
@@ -48,6 +49,7 @@
 #include "xpwm.h"
 #include "xi2c.h"
 #include "xdma.h"
+#include "xtimer.h"
 
 typedef unsigned char uint8_t;
 
@@ -108,16 +110,16 @@ extern void loop( void ) ;
 //} EExt_Interrupts ;
 //
 //typedef void (*voidFuncPtr)( void ) ;
-//
-///* Define attribute */
-//#if defined   ( __CC_ARM   ) /* Keil uVision 4 */
-//    #define WEAK (__attribute__ ((weak)))
-//#elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
-//    #define WEAK __weak
-//#elif defined (  __GNUC__  ) /* GCC CS */
-//    #define WEAK __attribute__ ((weak))
-//#endif
-//
+
+/* Define attribute */
+#if defined   ( __CC_ARM   ) /* Keil uVision 4 */
+    #define WEAK (__attribute__ ((weak)))
+#elif defined ( __ICCARM__ ) /* IAR Ewarm 5.41+ */
+    #define WEAK __weak
+#elif defined (  __GNUC__  ) /* GCC CS */
+    #define WEAK __attribute__ ((weak))
+#endif
+
 ///* Definitions and types for pins */
 //typedef enum _EAnalogChannel
 //{

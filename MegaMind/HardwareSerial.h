@@ -37,6 +37,6 @@ class HardwareSerial : public Stream
 //    virtual operator bool() = 0;
 };
 
-extern void serialEventRun(void) __attribute__((weak));
+//extern void serialEventRun(void) __attribute__((weak));
 
 #endif

@@ -48,7 +48,8 @@ static inline uint32_t mapResolution(uint32_t value, uint32_t from, uint32_t to)
 
 eAnalogReference analog_reference = AR_DEFAULT;
 
-//TODO:Set different analogReference. Currently analog reference is set to default value.
+//TODO:Set different analogReference. Currently analog reference is set to default value.\
+//analogReference function is currently not used.
 void analogReference(eAnalogReference ulMode)
 {
 	analog_reference = ulMode;

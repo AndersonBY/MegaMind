@@ -137,6 +137,7 @@ void TwoWire::begin(void) {
 
 //Slave Mode
 void TwoWire::begin(uint8_t address) {
+	//TODO:Initialize Slave mode. Set Slave address.
 }
 
 //Slave Mode
@@ -296,6 +297,7 @@ void TwoWire::onRequest(void(*function)(void)) {
 	onRequestCallback = function;
 }
 
+//TODO:Modify onService, add I2C interrupt handler
 #if 0
 void TwoWire::onService(void) {
 	// Retrieve interrupt status

@@ -66,6 +66,7 @@ int main( void )
 	{
 		loop();
 
+		//No need to use serialEvent function
 //		if (serialEventRun) serialEventRun();
 	}
 
