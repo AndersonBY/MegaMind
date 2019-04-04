@@ -92,13 +92,17 @@ In order to applied to more Arm MCU, MegaMind use two parameters to describe
 pin.One is the port name, another is pin number.
 Example:
 
-#####In Arduino:
-######pinMode(8, OUTPUT);
-######digitalWrite(8, HIGH);
+In Arduino:
+```
+pinMode(8, OUTPUT);
+digitalWrite(8, HIGH);
+```
 
-#####In MegaMind:
-######pinMode(PORTA, 8, OUTPUT);
-######digitalWrite(PORTA, 8 ,HIGH);
+In MegaMind:
+```
+pinMode(PORTA, 8, OUTPUT);
+digitalWrite(PORTA, 8 ,HIGH);
+```
 
 Usually there are 16 pins in one port:0~15.
 
@@ -106,7 +110,7 @@ Port name: PORTA,PORTB,PORTC...
 
 One exception is analogRead(). MegaMind Still use A0,A1... as pin number.
 
-####2.
+#### 2.
 analogWrite() accept pwm value between 0~100 while in Arduino it's 0~255.
 
 
